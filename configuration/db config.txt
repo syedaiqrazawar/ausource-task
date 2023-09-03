@@ -1,0 +1,31 @@
+Run these commands to create and connect mysql database:
+
+- mysql -u root -p
+- GRANT ALL PRIVILEGES ON `aussource`.* TO 'primarepo'@'localhost';
+- CREATE SCHEMA `aussource`;
+
+Now we need to run the following script in MySQL workbench:
+
+use aussource;
+
+CREATE TABLE users (
+  userid varchar(100) DEFAULT NULL,
+  username varchar(100) DEFAULT NULL,
+  userpass varchar(200) DEFAULT NULL,
+  email varchar(100) DEFAULT NULL,
+  is_admin varchar(5)
+);
+
+CREATE TABLE `user_roles` (
+  `userid` varchar(16) DEFAULT NULL,
+  `role_id` smallint DEFAULT NULL
+); 
+
+
+CREATE TABLE `companies` (
+  `company_id` varchar(16) NOT NULL,
+  `company_name` varchar(100) NOT NULL,
+  PRIMARY KEY (`company_id`)
+); 
+
+
