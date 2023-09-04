@@ -54,7 +54,7 @@ export default function Login(){
     return(
     <>
             <ToastContainer />
-            <div className="main-div">
+            <div className="main-div login">
                 <h2 className="login-heading">Login</h2>
                 <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
                     <Form>
