@@ -8,11 +8,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 import { userRouter } from './routes/user.js';
-import { companyRouter } from './routes/company.js';
 import { roleRouter } from './routes/role.js';
 
 app.use('/api/user', userRouter);
-app.use('/api/company', companyRouter);
 app.use('/api/role', roleRouter);
 
 app.all('*', async (req, res) => {

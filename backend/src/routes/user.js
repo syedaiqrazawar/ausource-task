@@ -8,7 +8,22 @@ import { logActions } from '../middlewares/log-actions.js';
 import { sendGmail } from '../services/emailConfig.js';
 
 const router = express.Router();
+/*
+  Get list of all users.
+*/
+router.get('/', validateToken, async (req, res) => {
+  try {
+    let [rows] = await pool.query(
+    `SELECT u.userid, u.username, u.email, ur.role_id
+    FROM users u
+    LEFT JOIN user_roles ur ON u.userid = ur.userid`  
+    );
 
+    return res.status(200).send({ users: rows });
+  } catch (err) {
+    return res.status(500).send({ message: err.message });
+  }
+});
 /*
   API end point to sign up new users on request.
 */
@@ -63,9 +78,9 @@ router.post('/signin', async (req, res) => {
 
   try {
     let [rows] = await pool.query(
-      `select userid, first_name, last_name, email, userpass, is_admin 
+      `select userid, username, email, userpass, is_admin 
        from users 
-       where active = 'yes' and email = ? `,
+       where email = ? `,
       [email]
     );
 

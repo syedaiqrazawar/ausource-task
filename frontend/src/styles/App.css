@@ -1,7 +1,7 @@
 body{
   background-color: aqua
 }
-.login .main-div{
+.login{
   height: 380px;
   width: 300px;
   background-color: rgb(250, 228, 228);
@@ -48,10 +48,10 @@ body{
 .login .main-div-sign-up{
   height: 550px;
 }
-.sign-up-paragraph{
+.login .sign-up-paragraph{
   margin-left: 60px;
 }
-.link-to-sign-up{
+.login .link-to-sign-up{
   margin-left: 50px;
 }
 .login .error-message {

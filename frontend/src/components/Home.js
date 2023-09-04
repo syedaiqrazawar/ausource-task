@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import Login from "./Login";
 import {Link, useNavigate} from 'react-router-dom'
 
 export default function Home(){
@@ -11,9 +10,16 @@ export default function Home(){
         if(!token){
             navigate("/"); 
           }
-          
 
-    },[])
+    },[]);
+
+    function onClickResource () {
+        navigate("/resource");
+    };
+
+    function onClickUsersList () {
+        navigate("/UsersList");
+    }
 
     function handleLogoutClick(){
         localStorage.removeItem('user')
@@ -24,8 +30,9 @@ export default function Home(){
 
     return(
         <div>
-            <button onClick={handleLogoutClick}>Log out</button>
-            <h2>Home component renderedd</h2>
+            <button onClick={onClickResource}>Resource management</button>
+            <button onClick={onClickUsersList}>UserList</button>
+            <button onClick={handleLogoutClick} style={{backgroundColor:"red"}}>Log out</button>
         </div>
     )
 }

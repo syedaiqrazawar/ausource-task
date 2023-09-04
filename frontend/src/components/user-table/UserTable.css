@@ -1,0 +1,98 @@
+.user-table {
+  font-size: smaller ;
+}
+
+.user-table table {
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+  width: 100%;
+  background-color: white;
+}
+
+.user-table table td, table th {
+  padding: 8px;
+}
+
+.user-table span {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin-top: 5px;
+}
+
+.user-table input {
+  margin-top: 6px;
+  margin-bottom: 10px;
+  padding: 6px;
+  width: 103px;
+}
+
+.user-table table tr:nth-child(even) {
+  /* background-color: #e5fffc; */
+  background-color: #E4FDE1;
+}
+
+.user-table table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.user-table table th, tfoot td {
+  font-weight: 500;
+  text-align: center;
+  background-color: #00d1b2;
+  color: white;
+}
+
+.user-table .manage {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-size: 14px;
+}
+
+.user-table .navigation {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.user-table .navigation .page-index {
+  display:inline;
+  padding: 10px;
+}
+
+.user-table .navigation button {
+  /* background-color: #456990; */
+  background-color: #19718f;
+  border: none;
+  margin-left: 2px;
+  font-size: 14px;
+}
+
+.user-table .navigation button:hover {
+  background-color: #2384a5;
+}
+
+.user-table .navigation button:disabled {
+  background-color: #19718f;
+}
+
+.user-table .navigation button:active {
+  border: none;
+}
+
+.user-table .filter input {
+  border-radius: 5px;
+  border: 1px solid #999;
+  height: 32px;
+
+}
+
+.user-table .filter-dropdown {
+  background-color: white;
+  height: 32px;
+  margin-top: 6px;
+  border: 1px solid #999;
+  border-radius: 5px;
+}

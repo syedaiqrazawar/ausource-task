@@ -4,7 +4,8 @@ import axios from 'axios';
 import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Formik,Form,ErrorMessage,Field } from "formik";
-import * as Yup from 'yup'
+import * as Yup from 'yup';
+import '../styles/App.css'
 
 
 export default function Login(){
@@ -24,7 +25,7 @@ export default function Login(){
                 localStorage.setItem('user', JSON.stringify(res.data.user));
                 localStorage.setItem('token', res.data.token);
             }
-            navigate("home");
+            navigate("/Home");
         })
         .catch((error) => { 
            console.log("error is: ", error)
@@ -54,7 +55,7 @@ export default function Login(){
     return(
     <>
             <ToastContainer />
-            <div className="main-div login">
+            <div className="login">
                 <h2 className="login-heading">Login</h2>
                 <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
                     <Form>

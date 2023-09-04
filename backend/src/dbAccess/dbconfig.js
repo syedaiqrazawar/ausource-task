@@ -1,8 +1,8 @@
 const dbconfig = {
     HOST: process.env.MYSQL_HOST,
     USER: "primarepo",
-    DB: "primarepo",
-    PASSWORD: process.env.MYSQL_PASSWORD
+    DB: "aussource",
+    PASSWORD: "asdf1234"
 }
 
 export default dbconfig;
